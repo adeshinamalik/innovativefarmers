@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				farm: {
+					50: '#f5f8f5',
+					100: '#e6efe5',
+					200: '#d0e1cc',
+					300: '#abcaa4',
+					400: '#7cab73',
+					500: '#598f51',
+					600: '#43723f',
+					700: '#365a33',
+					800: '#2f492d',
+					900: '#273c26',
+					950: '#132113',
+				},
+				earth: {
+					50: '#f8f7f5',
+					100: '#efeae2',
+					200: '#ded3c4',
+					300: '#cbb7a1',
+					400: '#b99a7d',
+					500: '#ac8363',
+					600: '#a17759',
+					700: '#86614a',
+					800: '#6e4f3f',
+					900: '#5a4235',
+					950: '#302219',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -63,6 +90,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				display: ['Poppins', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -70,25 +101,39 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				fadeIn: {
+					from: { opacity: '0', transform: 'translateY(10px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				slideIn: {
+					from: { transform: 'translateX(-10px)' },
+					to: { transform: 'translateX(0)' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.6s ease-out forwards',
+				'slide-in': 'slideIn 0.3s ease-out forwards',
+				'pulse-slow': 'pulse 3s infinite'
+			},
+			backdropFilter: {
+				'none': 'none',
+				'blur': 'blur(20px)'
+			},
+			boxShadow: {
+				glass: '0 4px 30px rgba(0, 0, 0, 0.1)'
 			}
 		}
 	},
