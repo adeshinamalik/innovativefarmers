@@ -10,6 +10,8 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Analytics from "./pages/Analytics";
+import AdminPanel from "./pages/AdminPanel";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/admin" element={<AdminPanel />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
