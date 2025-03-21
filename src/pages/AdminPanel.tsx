@@ -108,23 +108,23 @@ const StatusBadge = ({ status }: { status: string }) => {
       case "active":
       case "delivered":
       case "resolved":
-        return "success";
+        return "default";
       case "pending":
       case "processing":
       case "under review":
-        return "warning";
+        return "secondary";
       case "inactive":
         return "secondary";
       case "open":
         return "destructive";
       case "shipped":
-        return "info";
+        return "outline";
       default:
         return "outline";
     }
   };
 
-  let variant = getVariant() as "success" | "warning" | "secondary" | "destructive" | "info" | "outline";
+  let variant = getVariant() as "default" | "destructive" | "outline" | "secondary";
 
   return (
     <Badge variant={variant}>
@@ -257,7 +257,7 @@ const AdminPanel = () => {
           </div>
           
           <div className="p-6">
-            <TabsContent value="users" className="m-0" forceMount={activeTab === "users"}>
+            <TabsContent value="users" className="m-0" forceMount={activeTab === "users" ? true : undefined}>
               <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold">User Management</h2>
@@ -403,7 +403,7 @@ const AdminPanel = () => {
               </Card>
             </TabsContent>
 
-            <TabsContent value="products" className="m-0" forceMount={activeTab === "products"}>
+            <TabsContent value="products" className="m-0" forceMount={activeTab === "products" ? true : undefined}>
               <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold">Product Management</h2>
@@ -499,7 +499,7 @@ const AdminPanel = () => {
               </Card>
             </TabsContent>
 
-            <TabsContent value="orders" className="m-0" forceMount={activeTab === "orders"}>
+            <TabsContent value="orders" className="m-0" forceMount={activeTab === "orders" ? true : undefined}>
               <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold">Order Management</h2>
@@ -597,7 +597,7 @@ const AdminPanel = () => {
               </Card>
             </TabsContent>
 
-            <TabsContent value="disputes" className="m-0" forceMount={activeTab === "disputes"}>
+            <TabsContent value="disputes" className="m-0" forceMount={activeTab === "disputes" ? true : undefined}>
               <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold">Dispute Management</h2>
@@ -691,7 +691,7 @@ const AdminPanel = () => {
               </Card>
             </TabsContent>
 
-            <TabsContent value="roles" className="m-0" forceMount={activeTab === "roles"}>
+            <TabsContent value="roles" className="m-0" forceMount={activeTab === "roles" ? true : undefined}>
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold">Role Management</h2>
                 <p className="text-muted-foreground">Manage user roles and permissions</p>
@@ -871,7 +871,7 @@ const AdminPanel = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="permissions" className="m-0" forceMount={activeTab === "permissions"}>
+            <TabsContent value="permissions" className="m-0" forceMount={activeTab === "permissions" ? true : undefined}>
               <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold">Permissions</h2>
@@ -1074,3 +1074,4 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
+
